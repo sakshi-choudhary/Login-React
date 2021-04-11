@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import {
   AiOutlineArrowLeft,
@@ -11,11 +11,11 @@ import google from "../assets/google.png";
 
 function Home() {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
-  const [val, setVal] = useState(false);
+  const [val, setVal] = useState(true);
   const [pass, setPass] = useState("hjvhvhvjhvj");
   const [email, setEmail] = useState("johndoe@gmail.com");
   const [valid, setValid] = useState(true);
-
+  const myCheckbox = useRef(null);
   const emailRegex = /\S+@\S+\.\S+/;
 
   const validateEmail = (event) => {
@@ -27,13 +27,11 @@ function Home() {
     }
     setEmail(event.target.value);
   };
+  useEffect(() => {
+    myCheckbox.current.checked = "checked";
+  }, []);
 
-  const submitForm = (e) => {
-    e.preventDefault();
-
-    console.log("email:", email);
-    console.log("password:", pass);
-
+  const submitForm = () => {
     if (val && pass.length >= 8 && valid) {
       window.location.href = "/dashboard";
     }
@@ -97,8 +95,8 @@ function Home() {
               <div className="mr-2">
                 <input
                   type="checkbox"
+                  ref={myCheckbox}
                   class="border-blue-500 mr-2 border-2 checked:bg-blue-600 checked:border-transparent "
-                  value={val}
                   onChange={(e) => setVal(e.target.checked)}
                 ></input>
                 <span>
@@ -117,17 +115,15 @@ function Home() {
                 </span>
               </div>
               <div className="mt-3 sm:mt-8 sm:flex flex-col  justify-center">
-                <a href="/dashboard">
-                  <button
-                    onClick={submitForm}
-                    disabled={!val}
-                    className={`${
-                      val ? " hover:bg-blue-800" : "opacity-40 hover:none"
-                    }  shadow bg-blue-600 focus:outline-none text-sm md:text-lg md:w-96 w-64 flex items-center justify-center px-8 py-3 border border-transparent  font-medium rounded-xl text-white  md:py-4  md:px-10`}
-                  >
-                    Create Account
-                  </button>
-                </a>
+                <button
+                  onClick={submitForm}
+                  disabled={!val}
+                  className={`${
+                    val ? " hover:bg-blue-800" : "opacity-40 hover:none"
+                  }  shadow bg-blue-600 focus:outline-none text-sm md:text-lg md:w-96 w-64 flex items-center justify-center px-8 py-3 border border-transparent  font-medium rounded-xl text-white  md:py-4  md:px-10`}
+                >
+                  Create Account
+                </button>
 
                 <button className="focus:outline-none text-sm shadow mt-5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:w-96 w-64 flex items-center text-blue-600 justify-center px-8 py-3 font-medium rounded-xl border-2 border-blue-600  md:py-4 md:text-lg md:px-10">
                   <span>
