@@ -6,12 +6,12 @@ import {
   AiOutlineEyeInvisible,
 } from "react-icons/ai";
 import { TiTick } from "react-icons/ti";
-
+import { createBrowserHistory } from "history";
 import google from "../assets/google.png";
 
 function Home() {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
-  const [val, setVal] = useState(true);
+  const [val, setVal] = useState(null);
   const [pass, setPass] = useState("hjvhvhvjhvj");
   const [email, setEmail] = useState("johndoe@gmail.com");
   const [valid, setValid] = useState(true);
@@ -19,21 +19,24 @@ function Home() {
   const emailRegex = /\S+@\S+\.\S+/;
 
   const validateEmail = (event) => {
-    const email = event.target.value;
-    if (emailRegex.test(email)) {
+    const Email = event.target.value;
+    if (emailRegex.test(Email)) {
       setValid(true);
     } else {
       setValid(false);
     }
     setEmail(event.target.value);
   };
+
   useEffect(() => {
-    myCheckbox.current.checked = "checked";
+    myCheckbox.current.checked = false;
   }, []);
 
   const submitForm = () => {
     if (val && pass.length >= 8 && valid) {
-      window.location.href = "/dashboard";
+      createBrowserHistory().push("/dashboard");
+      window.location.reload();
+      localStorage.removeItem(val);
     }
   };
 
