@@ -69,7 +69,9 @@ function Home() {
               >
                 {valid ? <TiTick /> : ""}
               </button>
-
+              {!valid && (
+                <p className="text-red-500 -mt-8 mb-5">Invalid Email</p>
+              )}
               <label className="text-left text-sm font-bold">Password</label>
               <input
                 className={`${
@@ -82,13 +84,18 @@ function Home() {
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
               ></input>
+
               <button
                 className={` focus:outline-none text-blue-600 text-xl relative md:left-96 md:-ml-10 md:-top-20 left-36 ml-20 -top-20`}
                 onClick={() => setIsRevealPwd((prevState) => !prevState)}
               >
                 {isRevealPwd ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
               </button>
-
+              {pass.length < 8 && (
+                <p className="text-red-500 -mt-10 mb-5">
+                  Password should be min 8 letter
+                </p>
+              )}
               <div className="mr-2">
                 <input
                   type="checkbox"
