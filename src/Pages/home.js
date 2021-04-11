@@ -35,7 +35,7 @@ function Home() {
 
   return (
     <>
-      <div className="App">
+      <div className="App mt-5">
         <div className="overflow-hidden">
           <div className="p-5 flex justify-center items-center h-96 my-44 md:-mx-4">
             <div className="flex flex-col justify-center">
@@ -52,7 +52,7 @@ function Home() {
               <label className="text-left font-bold">Your Email</label>
 
               <input
-                className="md:w-96 w-64 mb-10 pl-3 bg-blue-50 border py-5  shadow-xs rounded-xl border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="md:w-96 w-64 mb-7 pl-3 bg-blue-50 border py-5  shadow-xs rounded-xl border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 type="email"
                 value={email}
                 onChange={validateEmail}
@@ -65,7 +65,7 @@ function Home() {
                 {valid ? <TiTick /> : ""}
               </button>
 
-              <label className="text-left text-sm">Password</label>
+              <label className="text-left text-sm font-bold">Password</label>
               <input
                 className={`${
                   pass.length < 8
@@ -97,6 +97,7 @@ function Home() {
                     I agree to the{" "}
                     <span className="underline text-blue-700">
                       Terms&Conditions
+                      <br />
                     </span>{" "}
                     and{" "}
                     <span className="underline text-blue-700">
