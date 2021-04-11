@@ -8,6 +8,7 @@ import {
 import { TiTick } from "react-icons/ti";
 
 import google from "../assets/google.png";
+
 function Home() {
   const [isRevealPwd, setIsRevealPwd] = useState(false);
   const [val, setVal] = useState(false);
@@ -63,10 +64,7 @@ function Home() {
                 onChange={validateEmail}
                 placeholder="email"
               ></input>
-              <button
-                className="focus:outline-none text-blue-600 text-xl relative md:left-96 md:-ml-10 md:-top-20 left-36 ml-20 -top-20 mt-2"
-                onClick={() => setIsRevealPwd((prevState) => !prevState)}
-              >
+              <button className="focus:outline-none text-blue-600 text-xl relative md:left-96 md:-ml-10 md:-top-20 left-36 ml-20 -top-20 mt-2">
                 {valid ? <TiTick /> : ""}
               </button>
               {!valid && (
