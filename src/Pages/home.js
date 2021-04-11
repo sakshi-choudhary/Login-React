@@ -37,7 +37,7 @@ function Home() {
     <>
       <div className="App mt-5">
         <div className="overflow-hidden">
-          <div className="p-5 flex justify-center items-center h-96 my-44 md:-mx-4">
+          <div className="p-5 flex justify-center items-center my-2 md:-mx-4">
             <div className="flex flex-col justify-center">
               <div>
                 <button className="focus:outline-none justify-left flex mb-5 rounded-full bg-blue-50 p-4">
