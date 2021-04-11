@@ -125,7 +125,7 @@ function Home() {
                     </button>
                   </a>
 
-                  <button className="text-sm shadow mt-5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:w-96 w-64 flex items-center text-blue-600 justify-center px-8 py-3 font-medium rounded-xl border-2 border-blue-600  md:py-4 md:text-lg md:px-10">
+                  <button className="focus:outline-none text-sm shadow mt-5 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 md:w-96 w-64 flex items-center text-blue-600 justify-center px-8 py-3 font-medium rounded-xl border-2 border-blue-600  md:py-4 md:text-lg md:px-10">
                     <span>
                       <img
                         alt="google"
