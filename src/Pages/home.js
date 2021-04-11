@@ -59,7 +59,7 @@ function Home() {
                 placeholder="email"
               ></input>
               <button
-                className="focus:outline-none text-blue-600 text-xl relative md:left-96 md:-ml-10 md:-top-20 left-36 ml-20 -top-20"
+                className="focus:outline-none text-blue-600 text-xl relative md:left-96 md:-ml-10 md:-top-20 left-36 ml-20 -top-20 mt-2"
                 onClick={() => setIsRevealPwd((prevState) => !prevState)}
               >
                 {valid ? <TiTick /> : ""}
