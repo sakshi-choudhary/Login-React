@@ -119,7 +119,9 @@ function Home() {
                   onClick={submitForm}
                   disabled={!val}
                   className={`${
-                    val ? " hover:bg-blue-800" : "opacity-40 hover:none"
+                    val && valid && pass.length >= 8
+                      ? " hover:bg-blue-800"
+                      : "opacity-40 hover:none"
                   }  shadow bg-blue-600 focus:outline-none text-sm md:text-lg md:w-96 w-64 flex items-center justify-center px-8 py-3 border border-transparent  font-medium rounded-xl text-white  md:py-4  md:px-10`}
                 >
                   Create Account
