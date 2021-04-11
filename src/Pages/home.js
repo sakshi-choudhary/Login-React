@@ -13,7 +13,7 @@ function Home() {
   const [val, setVal] = useState(false);
   const [pass, setPass] = useState("hjvhvhvjhvj");
   const [email, setEmail] = useState("johndoe@gmail.com");
-  const [valid, setValid] = useState(false);
+  const [valid, setValid] = useState(true);
 
   const emailRegex = /\S+@\S+\.\S+/;
 
