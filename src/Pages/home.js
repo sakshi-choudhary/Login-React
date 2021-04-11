@@ -33,7 +33,7 @@ function Home() {
     console.log("email:", email);
     console.log("password:", pass);
 
-    if (val && pass.length >= 8) {
+    if (val && pass.length >= 8 && valid) {
       window.location.href = "/dashboard";
     }
   };
