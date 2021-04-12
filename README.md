@@ -1,3 +1,3 @@
 ## React Working Login Screen
 
-![](preview.gif)
+<img alt="login" src="preview.gif" width="350" align="center"/>
