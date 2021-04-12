@@ -1,3 +1,3 @@
-# React Login Screen
+## React Working Login Screen
 
-<video autoplay loop  src="preview.mov"></video>
+![](preview.gif)
